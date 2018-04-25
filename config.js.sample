@@ -1,0 +1,12 @@
+var env = process.env.NODE_ENV;
+
+var config = {
+  default: {
+    db: 'mongodb://localhost:27017/mocha'
+  },
+  test: {
+    db: 'mongodb://localhost:27017/mocha_tests/'
+  }
+};
+
+module.exports = config[env] || config['default'];
